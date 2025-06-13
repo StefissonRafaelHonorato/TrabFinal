@@ -1,0 +1,57 @@
+.listagem-principal {
+    list-style: none;
+    width: 100%;
+    max-width: 900px; /* Largura máxima da listagem */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.listagem-principal li {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.listagem-principal li:last-child {
+    border-bottom: none;
+}
+
+.listagem-principal li.listagem-cabecalho {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #2e8b57;
+    border-bottom: 2px solid #2e8b57;
+}
+
+.listagem-principal li span {
+    flex: 1;
+    padding: 0 5px;
+}
+
+.listagem-principal li.listagem-cabecalho span {
+    text-align: center;
+}
+
+.listagem-principal .listagem-acoes {
+    flex: 0.5; /* Menor espaço para ações */
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.listagem-principal .listagem-acoes button {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    width: auto; /* Botões menores */
+    margin-right: 0;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Verde padrão para editar */
+    color: white;
+}
+.listagem-principal .listagem-acoes button:last-child {
+    background-color: #dc3545; /* Vermelho para remover */
+}

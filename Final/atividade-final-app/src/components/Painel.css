@@ -1,0 +1,18 @@
+article {
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    box-shadow: o 2px 4px rgba(0,0,0,0.05);
+}
+article h3 {
+    color: #2e8b57;
+    margin-bottom: 10px;
+}
+article ul {
+    list-style: none;
+}
+article ul li {
+    margin-bottom: 5px;
+    color: #555;
+}

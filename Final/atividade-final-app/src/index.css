@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f8f0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    body {
+        height: 100%;
+        overflow: auto;
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    main {
+        flex-direction: column;
+    }
+    nav {
+        border-bottom: 2px solid #ccc;
+    }
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
