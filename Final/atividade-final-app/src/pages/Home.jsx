@@ -1,27 +1,18 @@
-import Cabecalho from '../components/Cabecalho';
-import Conteudo from '../components/Conteudo';
-import Menu from '../components/Menu';
 import Secao from '../components/Secao';
 import Painel from '../components/Painel';
-import './Home.css';
+
 
 function Home() {
-    return (
-        <>
-            <Cabecalho />
-            <Conteudo>
-                <Menu />
-                <Secao texto="Dashboard Agro"> {}
-                    <div className="card-grid"> {}
-                        <Painel texto="Rodeios" itens={["Expo Umuarama", "Radar CRP 2026", "Votu International Rodeo"]}/>
-                        <Painel texto="LeilOes" itens={["Nelores", "Ovinos e Caprinos", "Girolandos"]}/>
-                        <Painel texto="Ultimas noticias" itens={["Gripe aviária", "Preço do Arroba", "Plantio vantajosos pra seca"]}/>
-                        <Painel texto="Moda Country" itens={["Camisas", "Bonés", "BoTAS"]}/>
-                    </div>
-                </Secao>
-            </Conteudo>
-        </>
-    );
+  return (
+    <Secao texto="Dashboard Agropecuário">
+      <div className="card-grid">
+        <Painel texto="Resumo de Rebanho" itens={["Bovinos: 150 cabeças", "Ovinos: 80 cabeças", "Aves: 500 unidades"]}/>
+        <Painel texto="Próximas Vacinações" itens={["Bovinos: 20/07/2025", "Ovinos: 01/08/2025"]}/>
+        <Painel texto="Estoque de Produtos" itens={["Ração: 500kg", "Medicamentos: 120 unidades", "Fertilizantes: 300kg"]}/>
+        <Painel texto="Vendas Recentes" itens={["Leite: 1500L (09/06)", "Ovos: 100 dúzias (08/06)"]}/>
+      </div>
+    </Secao>
+  );
 }
 
 export default Home;

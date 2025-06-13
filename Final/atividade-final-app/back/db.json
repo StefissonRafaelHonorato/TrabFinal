@@ -1,13 +1,41 @@
 {
-    "animais": [
-        { "id": "a1", "nome": "Cobiçado", "especie": "Bovino", "idade": 3, "peso": 450 },
-        { "id": "a2", "nome": "Dolly", "especie": "Ovino", "idade": 3, "peso": 60 }  
-    ],
-    "produtos": [
-        { "id": "p1", "nome": "Racao para gado", "unidade": "kg", "quantidae": 1000 },
-        { "id": "p2", "nome": "Vacina Aftosa", "unidade": "dose", "quantidade": 50 }
-    ],
-    "usuarios": [
-        { "id": "u1", "email": "user@pecua.com", "senha": "123"  }
-    ]
+  "animais": [
+    {
+      "id": "a1",
+      "nome": "Cobiçado",
+      "especie": "Bovino",
+      "idade": 3,
+      "peso": 450
+    },
+    {
+      "id": "a2",
+      "nome": "Dolly",
+      "especie": "Ovino",
+      "idade": 3,
+      "peso": 60
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "u1",
+      "email": "user@pecua.com",
+      "senha": "123"
+    },
+    {
+      "nome": "boi",
+      "especie": "nelore",
+      "raca": "nelore",
+      "idade": 9,
+      "peso": 670,
+      "id": "eb49"
+    },
+    {
+      "nome": "boi",
+      "especie": "girolando",
+      "raca": "girolando",
+      "idade": 7,
+      "peso": 500,
+      "id": "0ca9"
+    }
+  ]
 }

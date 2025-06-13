@@ -29,12 +29,6 @@ function Menu() {
           <button onClick={handleNavegar("/novo-animal")}>Novo Animal</button>
         </li>
         <li>
-          <button onClick={handleNavegar("/listar-produtos")}>Meus Produtos</button>
-        </li>
-        <li>
-          <button onClick={handleNavegar("/novo-produto")}>Novo Produto</button>
-        </li>
-        <li>
           <button onClick={handleNavegar("/perfil")}>Meu Perfil</button>
         </li>
         <li>
