@@ -11,12 +11,12 @@ function Home() {
             <Cabecalho />
             <Conteudo>
                 <Menu />
-                <Secao texto="Página Inicial"> {}
+                <Secao texto="Dashboard Agro"> {}
                     <div className="card-grid"> {}
-                        <Painel texto="Mural de Avisos" itens={["Incrições para cursos de Extensão", "Evento Maratona de Programação", "Palestra sobre Inteligência Artificial"]}/>
-                        <Painel texto="Agenda Acadêmica" itens={["Semana de provas P1", "Entrega de trabalhos", "Apresentação de TCC"]}/>
-                        <Painel texto="Histórico de Notas" itens={["Lógica de programação - 5,5", "Banco de Dados - 7,8", "Engenharia de software - 5,3"]}/>
-                        <Painel texto="Histórico de Faltas" itens={["Lógica de programação - 6", "Banco de dados - 0", "Engenharia de Software - 3"]}/>
+                        <Painel texto="Rodeios" itens={["Expo Umuarama", "Radar CRP 2026", "Votu International Rodeo"]}/>
+                        <Painel texto="LeilOes" itens={["Nelores", "Ovinos e Caprinos", "Girolandos"]}/>
+                        <Painel texto="Ultimas noticias" itens={["Gripe aviária", "Preço do Arroba", "Plantio vantajosos pra seca"]}/>
+                        <Painel texto="Moda Country" itens={["Camisas", "Bonés", "BoTAS"]}/>
                     </div>
                 </Secao>
             </Conteudo>

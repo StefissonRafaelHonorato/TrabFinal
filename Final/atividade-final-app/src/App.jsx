@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react"; // Adicionar useEffect
 import { RotaContext } from "./contexts/RotaContext.jsx";
 import Cabecalho from "./components/Cabecalho.jsx";
 import Conteudo from "./components/Conteudo.jsx";
@@ -19,37 +19,38 @@ import NovoProduto from "./pages/NovoProduto.jsx";
 import EditarProduto from "./pages/EditarProduto.jsx";
 
 function App() {
-  const { rota } = useContext(RotaContext);
+  const { rota, autenticado, setRota } = useContext(RotaContext);
 
-  // Lógica para determinar qual parte da aplicação renderizar
-  // Ex: se a rota é para "gerenciamento de dados", mostra cabecalho + conteudo com menu e páginas
-  // Senão, mostra apenas o login
-  const renderizaAppPrincipal = rota.startsWith("/listar") || rota.startsWith("/novo") || rota.startsWith("/editar") || rota === "/home" || rota === "/perfil";
-  const renderizaLogin = rota === "/login" || !renderizaAppPrincipal; // Rota inicial para login se não for uma rota principal
+  // Efeito para redirecionar para login se não autenticado e tentar acessar rota restrita
+  useEffect(() => {
+    if (!autenticado && rota !== "/login") {
+      setRota("/login");
+    }
+  }, [autenticado, rota, setRota]);
 
+  if (!autenticado) {
+    return <Login />; // Se não autenticado, sempre mostra a página de Login
+  }
+
+  // Se autenticado, renderiza o cabeçalho e o conteúdo com base na rota
   return (
     <>
-      {renderizaLogin && <Login />}
+      <Cabecalho />
+      <Conteudo>
+        {/* Rotas de Animais */}
+        {rota === "/listar-animais" && <ListarAnimais />}
+        {rota === "/novo-animal" && <NovoAnimal />}
+        {rota.startsWith("/editar-animal") && <EditarAnimal />}
 
-      {renderizaAppPrincipal && (
-        <>
-          <Cabecalho />
-          <Conteudo>
-            {/* Inclui o Menu aqui se for a parte principal da aplicação */}
-            {rota === "/listar-animais" && <ListarAnimais />}
-            {rota === "/novo-animal" && <NovoAnimal />}
-            {rota.startsWith("/editar-animal") && <EditarAnimal />}
+        {/* Rotas de Produtos */}
+        {rota === "/listar-produtos" && <ListarProdutos />}
+        {rota === "/novo-produto" && <NovoProduto />}
+        {rota.startsWith("/editar-produto") && <EditarProduto />}
 
-            {rota === "/listar-produtos" && <ListarProdutos />}
-            {rota === "/novo-produto" && <NovoProduto />}
-            {rota.startsWith("/editar-produto") && <EditarProduto />}
-
-            {/* Exemplo de rota para Home e Perfil */}
-            {rota === "/home" && <Home />}
-            {rota === "/perfil" && <Perfil />}
-          </Conteudo>
-        </>
-      )}
+        {/* Rotas de Páginas Estáticas (Dashboard, Perfil) */}
+        {rota === "/home" && <Home />}
+        {rota === "/perfil" && <Perfil />}
+      </Conteudo>
     </>
   );
 }

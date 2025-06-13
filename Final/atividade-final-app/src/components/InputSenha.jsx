@@ -1,10 +1,11 @@
 import './Input.css';
 
-function InputSenha() {
+function InputSenha(props) {
     return (
         <>
             <label htmlFor="senha">Senha</label>
-            <input type="password" id="senha" name="senha" required />
+            <input type="password" id="senha" name="senha" value={props.valor} onChange={props.onChange} />
+            {props.erro && <p>{props.erro}</p>}
         </>
     );
 }
